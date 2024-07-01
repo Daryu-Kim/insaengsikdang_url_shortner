@@ -1,0 +1,11 @@
+# shortener/urls.py
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import ShortUrlViewSet
+
+router = DefaultRouter()
+router.register('', ShortUrlViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
